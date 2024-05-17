@@ -21,7 +21,8 @@ export const config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/1-homePageTests.spec.js',
+        './test/specs/2-signInPageTests.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -55,7 +56,8 @@ export const config = {
         "goog:chromeOptions":{
             args: [
                 //'--headless',
-                '--start-maximized'
+                '--start-maximized',
+                '--incognito'
             ]
         }
     }, 
