@@ -1,9 +1,11 @@
-import { browser, $, $$ } from '@wdio/globals'
+import { browser} from '@wdio/globals'
 import { expect} from 'chai'
+import HomePage from '../pages/home.page.js'
 
 describe('Home Page Tests', () => {
-
+    
     beforeEach('', async()=> {
+        await HomePage.initialize()
         await browser.url('https://qafellas-estate.onrender.com/')
         const title = await browser.getTitle()
         expect(title).to.equal('QaFellas Estate')
@@ -13,17 +15,17 @@ describe('Home Page Tests', () => {
 
     it('should see required web elements on Home Page', async () => {
          //await browser.pause(5000)
-        expect(await $('//*[@class="text-slate-600"]').isDisplayed()).to.be.true
-        expect(await $('a[href="/about"]').isClickable()).to.be.true
-        expect(await $('//a[text()="Let\'s get started..."]').isDisplayed()).to.be.true
-        expect(await $('[placeholder="Search..."]').isDisplayed()).to.be.true
+        expect(await HomePage.searchIcon.isDisplayed()).to.be.true
+        expect(await HomePage.aboutPageBtn.isClickable()).to.be.true
+        expect(await HomePage.searchPageBtn.isDisplayed()).to.be.true
+        expect(await HomePage.basicSearchBox.isDisplayed()).to.be.true
     })
 
     it('should search a listing on Home Page', async () => {
         const searchWord = 'Green stylish'
-        await $('[placeholder="Search..."]').addValue(searchWord)
-        await $('//*[@class="text-slate-600"]').click()
-        const resultText = await $('(//a[contains(@href, "/listing")]//p)[1]').getText()
+        await HomePage.basicSearchBox.addValue(searchWord)
+        await HomePage.searchIcon.click()
+        const resultText = await HomePage.searchListingTitle.getText()
         expect(resultText.includes(searchWord)).to.be.true
     })
 })
