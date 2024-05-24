@@ -1,5 +1,7 @@
 class HomePage{
-    //locators
+    /**
+     * Holds page locators
+     */
     async initialize(){
         this.searchIcon = await $('//*[@class="text-slate-600"]')
         this.aboutPageBtn = await $('a[href="/about"]')

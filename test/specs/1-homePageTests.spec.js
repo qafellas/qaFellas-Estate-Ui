@@ -1,16 +1,13 @@
 import { browser} from '@wdio/globals'
 import { expect} from 'chai'
 import HomePage from '../pages/home.page.js'
+import SignInPage from '../pages/signin.page.js'
 
 describe('Home Page Tests', () => {
     
     beforeEach('', async()=> {
         await HomePage.initialize()
-        await browser.url('https://qafellas-estate.onrender.com/')
-        const title = await browser.getTitle()
-        expect(title).to.equal('QaFellas Estate')
-        const url = await browser.getUrl()
-        expect(url.includes('qafellas-estate')).to.be.true
+        await SignInPage.open()
     })
 
     it('should see required web elements on Home Page', async () => {
