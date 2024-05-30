@@ -14,6 +14,7 @@ class SignInPage extends Base {
     this.signUpNavBtn = await $('//span[text()="Sign up"]')
     this.usernameBox = await $('#username')
     this.signUpBtn = await $('//button[text()="Sign Up"]')
+    this.loginHeader = await $('//h1[text()="Sign In"]')
   }
 
   /**
@@ -32,7 +33,6 @@ class SignInPage extends Base {
     await this.emailBox.setValue(email);
     await this.passwordBox.setValue(password);
     await this.signInBtn.click();
-    this.loginHeader = await $('//h1[text()="Sign In"]')
   }
  
   /**

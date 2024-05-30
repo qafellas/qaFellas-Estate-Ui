@@ -5,6 +5,7 @@ class ProfilePage{
      */
     async initialize(){
         this.signOut = await $('//span[text()="Sign out"]')
+        this.deleteUserBtn = await $('//span[text()="Delete account"]')
     }
 
 }
