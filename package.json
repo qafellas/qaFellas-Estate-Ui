@@ -7,9 +7,11 @@
     "@babel/register": "^7.23.7",
     "@wdio/allure-reporter": "^8.38.0",
     "@wdio/cli": "^8.36.1",
+    "@wdio/json-reporter": "^8.38.0",
     "@wdio/local-runner": "^8.36.1",
     "@wdio/mocha-framework": "^8.36.1",
-    "@wdio/spec-reporter": "^8.36.1"
+    "@wdio/spec-reporter": "^8.36.1",
+    "fs": "^0.0.1-security"
   },
   "scripts": {
     "wdio": "wdio run ./wdio.conf.js"

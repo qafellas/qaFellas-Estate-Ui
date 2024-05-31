@@ -1,4 +1,5 @@
 import allure from 'allure-commandline'
+import mergeResults from '@wdio/json-reporter/mergeResults'
 
 export const config = {
     runner: 'local',
@@ -51,6 +52,12 @@ export const config = {
             outputDir: 'allure-results',
             disableWebdriverStepsReporting: true,
             disableWebdriverScreenshotsReporting: false,
+        }],
+        ['json',{
+            outputDir: './output/jsonReporter',
+            outputFileFormat: (opts) => {
+                return `results-${opts.cid}.${opts.capabilities.browserName}.json`
+            }
         }]
     ],
 
@@ -85,6 +92,7 @@ export const config = {
     // },
 
     onComplete: function (exitCode, config, capabilities, results) {
+        mergeResults('./output/jsonReporter', 'results-*', 'test-results.json')
         const reportError = new Error('Could not generate Allure report')
         const generation = allure(['generate', 'allure-results', '--clean'])
         return new Promise((resolve, reject) => {
