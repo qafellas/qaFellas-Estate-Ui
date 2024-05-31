@@ -51,3 +51,24 @@ jobs:
           path: testResults.json    # Path to test results
           reporter: mocha-json
           max-annotations: '30'
+
+      - name: 🔗 Read Test Report URL
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "Available outputs:"
+          echo "${{ toJSON(steps.test_report.outputs) }}"
+          echo "Check run URL: ${{ steps.test_report.outputs.url }}"
+          echo "TEST_RUN_HTML=${{ steps.test_report.outputs.url_html }}" | tee -a $GITHUB_ENV
+          
+
+      - name: 🔔📣 Send  JSON report to Slack
+        if: always()
+        id: slack
+        uses: slackapi/slack-github-action@v1.23.0
+        with:
+                payload-file-path: "./jsonReporter.json"
+        env:
+              SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+              SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
