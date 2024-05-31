@@ -61,7 +61,10 @@ jobs:
           echo "${{ toJSON(steps.test_report.outputs) }}"
           echo "Check run URL: ${{ steps.test_report.outputs.url }}"
           echo "TEST_RUN_HTML=${{ steps.test_report.outputs.url_html }}" | tee -a $GITHUB_ENV
-          
+
+      - name : 📈 Create Json report
+        if: always()
+        run: node test/utils/slackPayloadGenerator.js
 
       - name: 🔔📣 Send  JSON report to Slack
         if: always()
