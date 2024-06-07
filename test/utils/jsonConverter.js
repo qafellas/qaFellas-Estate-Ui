@@ -56,11 +56,11 @@ let webdriverIOJson
               "duration": test.duration,
               "currentRetry": 0,
               "err": {
-                "message": test.error,
+                "message": test.error.message,
                 "showDiff": true,
                 "actual": "",
                 "expected": "",
-                "stack": test.standardError
+                "stack": test.error.stack
               }
             }
             failures.push(failureObj)
@@ -86,11 +86,11 @@ let webdriverIOJson
                 "currentRetry": 0,
                 "speed": "fast",
                 "err": {
-                  "message": test.error,
+                  "message": test.error.message,
                   "showDiff": true,
                   "actual": "",
                   "expected": "",
-                  "stack": test.standardError
+                  "stack": test.error.stack
                 }
               }
               tests.push(testObj)
