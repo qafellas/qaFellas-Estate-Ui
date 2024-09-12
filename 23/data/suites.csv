@@ -1,0 +1,7 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Sep 12 05:21:52 GMT 2024","Thu Sep 12 05:21:53 GMT 2024","1037","","Home Page Tests","","","","should search a listing on Home Page",""
+"failed","Thu Sep 12 05:21:57 GMT 2024","Thu Sep 12 05:21:58 GMT 2024","1268","","Sign in Tests","","","","should get error message when password is invalid",""
+"broken","Thu Sep 12 05:21:58 GMT 2024","Thu Sep 12 05:22:11 GMT 2024","12814","","Sign in Tests","","","","should login successfuly with valid email and password",""
+"broken","Thu Sep 12 05:22:11 GMT 2024","Thu Sep 12 05:22:27 GMT 2024","16148","","Sign in Tests","","","","should sign up new user",""
+"passed","Thu Sep 12 05:20:50 GMT 2024","Thu Sep 12 05:21:52 GMT 2024","61821","","Home Page Tests","","","","should see required web elements on Home Page",""
+"passed","Thu Sep 12 05:21:55 GMT 2024","Thu Sep 12 05:21:57 GMT 2024","1338","","Sign in Tests","","","","should get error message when user email is invalid",""
