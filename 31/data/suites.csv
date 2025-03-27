@@ -1,7 +1,0 @@
-"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","10816","should sign up new user","","Thu Nov 07 05:22:00 GMT 2024","broken","Thu Nov 07 05:22:11 GMT 2024","","Sign in Tests","",""
-"","969","should search a listing on Home Page","","Thu Nov 07 05:21:22 GMT 2024","passed","Thu Nov 07 05:21:23 GMT 2024","","Home Page Tests","",""
-"","10747","should get error message when password is invalid","","Thu Nov 07 05:21:36 GMT 2024","broken","Thu Nov 07 05:21:47 GMT 2024","","Sign in Tests","",""
-"","10853","should get error message when user email is invalid","","Thu Nov 07 05:21:26 GMT 2024","broken","Thu Nov 07 05:21:36 GMT 2024","","Sign in Tests","",""
-"","41625","should see required web elements on Home Page","","Thu Nov 07 05:20:41 GMT 2024","passed","Thu Nov 07 05:21:22 GMT 2024","","Home Page Tests","",""
-"","12814","should login successfuly with valid email and password","","Thu Nov 07 05:21:47 GMT 2024","broken","Thu Nov 07 05:22:00 GMT 2024","","Sign in Tests","",""
